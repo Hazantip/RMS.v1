@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<!--
+  **NOTE:** This is a template for index.html. It uses ejs and htmlWebpackPlugin to generate a different index.html for each environment. htmlWebpackPlugin will dynamically add references to the scripts and styles that it bundles to this file. The generated bundles have hash-based filenames, so it's necessary to add the references dynamically.
+  For more info on ejs, see http://www.embeddedjs.com/. For examples of using it with htmlWebpackPlugin, see https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs
+  -->
+<head>
+	<!--
+	  The htmlWebpackPlugin will parse the logic below so that trackJS is only added to the production version of index.html (since only webpack.config.prod.js provides the trackJS token)
+	  This is an example of how to add features to index.html for only one environment.
+	  To track JavaScript errors via TrackJS, sign up for a free trial at TrackJS.com and enter your token in /webpack.config.prod.js on line 55.
+	 -->
+	<% if (htmlWebpackPlugin.options.trackJSToken) { %>
+	<script>window._trackJs = {token: '<%= htmlWebpackPlugin.options.trackJSToken %>'};</script>
+	<script src="https://d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js"></script>
+	<% } %>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta content="description..." name="description">
+	<meta content="keyword1, keyword2" name="keywords">
+
+	<meta content="telephone=no" name="format-detection">
+	<!-- This make sence for mobile browsers. It means, that content has been optimized for mobile browsers -->
+	<meta name="HandheldFriendly" content="true">
+
+	<!-- fb meta -->
+	<meta property="og:title" content="my website og:title" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://khazan4rabbi.localtunnel.me/" />
+	<meta property="og:image" content="https://pbs.twimg.com/profile_images/722106861969936384/-nLxbeWU.jpg" />
+	<meta property="og:description" content="Some og:description...."/>
+
+	<!-- twitter meta -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="twitter:site content">
+	<meta name="twitter:creator" content="twitter:creator @Haznatip">
+	<meta name="twitter:title" content="twitter:title">
+	<meta name="twitter:description" content="Some twitter:description....">
+	<meta name="twitter:image" content="https://pbs.twimg.com/profile_images/722106861969936384/-nLxbeWU.jpg">
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<!---->
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!--<link href="//cdn.rawgit.com/morteza/bootstap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css" rel="stylesheet" >-->
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
